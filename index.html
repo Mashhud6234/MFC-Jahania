@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="ur-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Miran Jee Food Club (MFC) Jahanian: karahi, pulao, pizza, burgers, shakes aur deals. Free home delivery 3 km tak. 0309-7000178">
+<meta name="theme-color" content="#3f1115">
+<title>Miran Jee Food Club</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 48'%3E%3Cpath d='M0 20a20 20 0 0 1 40 0v28H0z' fill='%23e8a33d'/%3E%3Ctext x='20' y='34' font-size='13' text-anchor='middle' fill='%233f1115' font-family='Georgia'%3EMFC%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Karla:wght@400;500;700&family=Noto+Nastaliq+Urdu:wght@500&display=swap">
+<style>
+:root{
+  color-scheme: dark;
+  --wine:#3f1115; --wine2:#4d161b; --wine3:#6a2a2e; --deep:#2a0b0e;
+  --saffron:#e8a33d; --saffron2:#f3c476;
+  --ivory:#f4ead7; --ivory2:#ebdfc6; --sand:#d9b98a; --clay:#8a5a3c; --line:#c9ad85;
+  --ink:#2a0b0e;
+  --display:"Gilda Display", "Georgia", "Times New Roman", serif;
+  --body:"Karla", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --urdu:"Noto Nastaliq Urdu", "Jameel Noori Nastaleeq", serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--wine); color:var(--ivory); font-family:var(--body); font-size:16px; line-height:1.6; overflow-x:hidden}
+.wrap{max-width:1200px; margin:0 auto; padding-inline:24px}
+a{color:inherit}
+button{font:inherit; color:inherit; cursor:pointer}
+:focus-visible{outline:2px solid var(--saffron); outline-offset:3px}
+.ur{font-family:var(--urdu); direction:rtl; line-height:2.1}
+
+/* jaali pattern for dark bands */
+.jaali{background-color:var(--wine);
+  background-image:radial-gradient(circle at 50% 50%, rgba(232,163,61,.07) 0 2px, transparent 3px),
+    radial-gradient(circle at 0 0, rgba(232,163,61,.05) 0 10px, transparent 11px),
+    radial-gradient(circle at 100% 100%, rgba(232,163,61,.05) 0 10px, transparent 11px);
+  background-size:36px 36px}
+
+/* nav */
+.nav{position:sticky; top:env(safe-area-inset-top,0px); z-index:30; background:rgba(63,17,21,.9); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid var(--wine3)}
+.nav .wrap{display:flex; align-items:center; gap:24px; height:74px}
+.brand{display:flex; align-items:center; gap:12px; text-decoration:none}
+.brand .arch{width:40px; height:48px; border-radius:20px 20px 4px 4px; background:var(--saffron); color:var(--wine); display:grid; place-items:center; font-family:var(--display); font-size:17px}
+.brand b{display:block; font-family:var(--display); font-weight:400; font-size:20px; line-height:1.1}
+.brand small{font-size:10px; letter-spacing:.3em; text-transform:uppercase; color:var(--sand)}
+.nav nav{display:flex; gap:22px; margin-left:auto}
+.nav nav a{text-decoration:none; font-size:15px; color:var(--ivory); opacity:.85}
+.nav nav a:hover{opacity:1; color:var(--saffron2)}
+.cartbtn{display:flex; align-items:center; gap:10px; background:var(--saffron); color:var(--wine); border:0; padding:11px 18px; border-radius:999px; font-weight:700; font-size:14px; transition:transform .2s}
+.cartbtn:hover{transform:translateY(-2px)}
+.cartbtn b{background:var(--wine); color:var(--saffron); border-radius:999px; min-width:22px; height:22px; display:grid; place-items:center; font-size:12px; padding-inline:6px}
+.cartbtn.bump{animation:bump .45s}
+@keyframes bump{40%{transform:scale(1.14)}}
+
+/* hero */
+.hero{padding-block:48px 64px}
+.hero .wrap{display:grid; grid-template-columns:1.05fr .95fr; gap:48px; align-items:center}
+.hero .urname{font-size:32px; color:var(--saffron); margin:0}
+.hero h1{font-family:var(--display); font-weight:400; font-size:clamp(46px,6.4vw,84px); line-height:1.02; margin:6px 0 20px; text-wrap:balance}
+.hero h1 em{font-style:normal; color:var(--saffron)}
+.hero p{font-size:18px; color:var(--sand); max-width:46ch; margin:0 0 28px}
+.btns{display:flex; flex-wrap:wrap; gap:12px}
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:15px 26px; border-radius:999px; font-weight:700; text-decoration:none; border:0; font-size:16px; transition:transform .2s, background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.solid{background:var(--ivory); color:var(--wine)}
+.btn.gold{background:var(--saffron); color:var(--wine)}
+.btn.line{border:1.5px solid var(--sand); color:var(--ivory); background:transparent}
+.btn.line:hover{border-color:var(--saffron); color:var(--saffron2)}
+.facts{display:flex; flex-wrap:wrap; gap:14px 28px; margin-top:34px; padding-top:24px; border-top:1px solid var(--wine3); font-size:14px; color:var(--sand)}
+.facts b{display:block; color:var(--ivory); font-family:var(--display); font-weight:400; font-size:22px}
+
+.archframe{position:relative; width:100%; max-width:480px; aspect-ratio:480/580; margin-inline:auto; border-radius:240px 240px 18px 18px; background:var(--ivory); padding:16px}
+.archframe .inner{position:relative; width:100%; height:100%; border-radius:224px 224px 10px 10px; background:radial-gradient(120% 70% at 50% 35%, #8a2a2f 0%, #5a1a1e 55%, #3a0f12 100%); border:2px solid var(--saffron); overflow:hidden}
+#karahi3d{position:absolute; inset:0; width:100%; height:100%; display:block; cursor:grab; touch-action:pan-y}
+#karahi3d:active{cursor:grabbing}
+.archframe .cap{position:absolute; left:0; right:0; bottom:22px; text-align:center; pointer-events:none}
+.archframe .cap b{display:block; font-family:var(--display); font-weight:400; font-size:26px}
+.archframe .cap span{color:var(--saffron2); font-size:15px}
+.archframe .drag{position:absolute; top:44px; left:50%; transform:translateX(-50%); font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:var(--sand); white-space:nowrap; pointer-events:none}
+.archframe .seal{position:absolute; top:26%; right:-18px; width:96px; height:96px; border-radius:50%; background:var(--saffron); color:var(--wine); display:grid; place-items:center; text-align:center; font-weight:700; font-size:12px; line-height:1.2; transform:rotate(10deg); box-shadow:0 12px 30px rgba(0,0,0,.35)}
+.archframe .seal span{font-family:var(--display); font-size:22px; display:block; font-weight:400}
+
+/* ribbon */
+.ribbon{background:var(--saffron); color:var(--wine); overflow:hidden}
+.ribbon .track{display:flex; gap:36px; white-space:nowrap; padding-block:12px; width:max-content; animation:slide 40s linear infinite; font-family:var(--display); font-size:20px}
+.ribbon .track span::after{content:"◆"; font-size:11px; margin-left:36px; vertical-align:middle}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* sections */
+section{scroll-margin-top:80px}
+.eyebrow{font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--saffron); font-weight:700}
+.shead{display:flex; align-items:flex-end; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-bottom:28px}
+.shead h2{font-family:var(--display); font-weight:400; font-size:clamp(38px,5vw,56px); line-height:1.05; margin:8px 0 0; text-wrap:balance}
+.shead p{margin:6px 0 0; max-width:52ch}
+
+/* menu (ivory) */
+.menu{background:var(--ivory); color:var(--ink); padding-block:72px 80px}
+.menu .eyebrow{color:#a8641c}
+.menu .shead p{color:var(--clay)}
+.groups{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px}
+.groups button{border:1.5px solid var(--wine); background:transparent; color:var(--wine); padding:10px 20px; border-radius:999px; font-weight:700; font-size:15px}
+.groups button[aria-selected="true"]{background:var(--wine); color:var(--ivory)}
+.chips{position:sticky; top:calc(74px + env(safe-area-inset-top,0px)); z-index:5; background:var(--ivory); display:flex; gap:6px; overflow-x:auto; padding-block:12px; margin-bottom:28px; border-bottom:1px solid var(--line); scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips button{flex:none; border:0; background:var(--ivory2); color:var(--clay); padding:9px 16px; border-radius:10px; font-weight:700; font-size:14px}
+.chips button:hover{color:var(--wine)}
+.chips button[aria-selected="true"]{background:var(--saffron); color:var(--wine)}
+.cat{display:grid; grid-template-columns:300px 1fr; gap:48px; align-items:start}
+.medal{position:sticky; top:150px; display:flex; flex-direction:column; align-items:center; text-align:center; gap:10px}
+.medal .arch{width:100%; max-width:260px; aspect-ratio:260/300; border-radius:130px 130px 12px 12px; background:var(--wine); border:2px solid var(--saffron); display:grid; place-items:center; box-shadow:inset 0 0 0 8px var(--wine), inset 0 0 0 9px rgba(232,163,61,.4)}
+.medal .arch svg{width:62%; height:auto; filter:drop-shadow(0 14px 14px rgba(0,0,0,.45)); animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-8px) rotate(-2deg)}}
+.medal h3{font-family:var(--display); font-weight:400; font-size:32px; margin:8px 0 0; line-height:1.1}
+.medal .ur{font-size:20px; color:#a8641c; margin:0}
+.medal p{margin:0; font-size:14px; color:var(--clay); max-width:30ch}
+.sizes{display:inline-flex; background:var(--ivory2); padding:4px; border-radius:12px; gap:2px; margin-top:6px; flex-wrap:wrap; justify-content:center}
+.sizes button{border:0; background:transparent; padding:8px 12px; border-radius:9px; font-weight:700; font-size:13px; color:var(--clay)}
+.sizes button[aria-pressed="true"]{background:var(--wine); color:var(--ivory)}
+
+.list{display:flex; flex-direction:column}
+.lhead{display:grid; grid-template-columns:1fr 96px 96px; gap:12px; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--clay); font-weight:700; padding-bottom:10px; border-bottom:1.5px solid var(--wine)}
+.lhead span:not(:first-child){text-align:center}
+.row{display:grid; grid-template-columns:1fr 96px 96px; gap:12px; align-items:center; padding-block:14px; border-bottom:1px dashed var(--line); animation:rise .45s both}
+.row.one{grid-template-columns:1fr 96px}
+.lhead.one{grid-template-columns:1fr 96px}
+.row .nm b{display:block; font-size:18px; font-weight:700; line-height:1.3}
+.row .nm .ur{font-size:15px; color:var(--clay); line-height:1.9; display:block; text-align:left; direction:rtl; unicode-bidi:plaintext}
+.row .nm small{display:block; color:var(--clay); font-size:13px}
+.pb{display:flex; flex-direction:column; align-items:center; gap:4px; border:1.5px solid var(--line); background:#fffaf0; border-radius:12px; padding:8px 6px; font-weight:700; color:var(--wine); transition:all .2s; min-height:48px; justify-content:center}
+.pb .p{font-family:var(--display); font-weight:400; font-size:20px; line-height:1; font-variant-numeric:tabular-nums}
+.pb .a{font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--clay)}
+.pb:hover{background:var(--wine); border-color:var(--wine); color:var(--ivory)}
+.pb:hover .a{color:var(--saffron2)}
+.pb:disabled{opacity:.35; cursor:default; background:transparent}
+.pb:disabled:hover{color:var(--wine)}
+@keyframes rise{from{opacity:.001; transform:translateY(10px)}}
+.mnote{margin-top:18px; font-size:14px; color:var(--clay); display:flex; gap:10px; flex-wrap:wrap}
+.mnote span{background:var(--ivory2); padding:6px 12px; border-radius:8px}
+
+/* deals */
+.deals{padding-block:80px}
+.deals .shead p{color:var(--sand)}
+.dtabs{display:flex; gap:8px; overflow-x:auto; padding-bottom:6px; margin-bottom:10px; scrollbar-width:none}
+.dtabs::-webkit-scrollbar{display:none}
+.dtabs button{flex:none; border:1.5px solid var(--wine3); background:var(--wine2); padding:11px 18px; border-radius:999px; font-weight:700; font-size:14px; color:var(--sand)}
+.dtabs button[aria-selected="true"]{background:var(--saffron); border-color:var(--saffron); color:var(--wine)}
+.dnote{font-size:14px; color:var(--sand); margin:10px 0 26px; min-height:22px}
+.dgrid{display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:22px; perspective:1100px}
+.deal{position:relative; border-radius:130px 130px 14px 14px; border:1.5px solid var(--saffron); background:linear-gradient(180deg, var(--wine2), var(--deep)); padding:58px 24px 24px; display:flex; flex-direction:column; align-items:center; text-align:center; gap:10px; transform-style:preserve-3d; transition:transform .25s ease; animation:rise .45s both}
+.deal:nth-child(3n+2){background:var(--saffron); color:var(--wine); border-color:var(--saffron)}
+.deal .no{font-family:var(--display); font-size:15px; letter-spacing:.2em; text-transform:uppercase; color:var(--saffron); transform:translateZ(30px)}
+.deal:nth-child(3n+2) .no{color:var(--wine)}
+.deal ul{list-style:none; margin:0; padding:0; font-size:15px; line-height:1.5; transform:translateZ(20px); flex:1}
+.deal .dp{font-family:var(--display); font-size:34px; line-height:1; color:var(--saffron2); transform:translateZ(40px)}
+.deal:nth-child(3n+2) .dp{color:var(--wine)}
+.deal .addd{border:0; background:var(--ivory); color:var(--wine); padding:11px 20px; border-radius:999px; font-weight:700; font-size:14px; transform:translateZ(30px); min-height:44px}
+.deal:nth-child(3n+2) .addd{background:var(--wine); color:var(--ivory)}
+.sauce{margin-top:26px; display:flex; gap:12px; flex-wrap:wrap; align-items:center; color:var(--sand); font-size:15px}
+.sauce button{border:1.5px solid var(--wine3); background:transparent; color:var(--ivory); padding:9px 16px; border-radius:999px; font-weight:700; font-size:14px}
+.sauce button:hover{border-color:var(--saffron); color:var(--saffron2)}
+
+/* hall */
+.hall{background:var(--deep); padding-block:80px}
+.hall .wrap{display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center}
+.hall h2{font-family:var(--display); font-weight:400; font-size:clamp(36px,4.6vw,52px); line-height:1.08; margin:10px 0 16px; text-wrap:balance}
+.hall p{color:var(--sand); margin:0 0 24px; max-width:48ch}
+.arches{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px}
+.arches div{aspect-ratio:3/4.4; border-radius:999px 999px 10px 10px; border:1.5px solid var(--saffron); display:flex; flex-direction:column; justify-content:flex-end; align-items:center; padding:18px 8px; text-align:center; gap:4px; background:linear-gradient(180deg, transparent 40%, rgba(232,163,61,.12))}
+.arches b{font-family:var(--display); font-weight:400; font-size:20px}
+.arches span{font-size:12px; color:var(--sand)}
+
+/* visit */
+.visit{padding-block:80px}
+.vgrid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px}
+.vc{border:1px solid var(--wine3); border-radius:18px; padding:26px; background:var(--wine2); display:flex; flex-direction:column; gap:8px}
+.vc .eyebrow{font-size:11px}
+.vc b{font-family:var(--display); font-weight:400; font-size:24px; line-height:1.25}
+.vc span{color:var(--sand); font-size:15px}
+.phone{display:flex; align-items:center; gap:10px; justify-content:space-between; font-family:var(--display); font-size:24px; user-select:all}
+.copy{border:1px solid var(--wine3); background:transparent; color:var(--sand); border-radius:8px; padding:6px 10px; font-size:12px; font-family:var(--body); font-weight:700; user-select:none}
+.copy:hover{color:var(--saffron2); border-color:var(--saffron)}
+footer{border-top:1px solid var(--wine3); padding-block:36px 44px; color:var(--sand); font-size:14px}
+footer .wrap{display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:center}
+footer .ur{font-size:22px; color:var(--saffron)}
+
+/* drawer */
+.scrim{position:fixed; inset:0; background:rgba(20,4,6,.6); z-index:40; opacity:0; pointer-events:none; transition:opacity .3s}
+.scrim.on{opacity:1; pointer-events:auto}
+.drawer{position:fixed; top:0; right:0; bottom:0; width:min(430px,100%); background:var(--ivory); color:var(--ink); z-index:50; transform:translateX(105%); transition:transform .4s cubic-bezier(.2,.9,.3,1); display:flex; flex-direction:column; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px)}
+.drawer.on{transform:none}
+.dh{display:flex; align-items:center; justify-content:space-between; padding:20px 22px; border-bottom:1.5px solid var(--wine)}
+.dh h3{font-family:var(--display); font-weight:400; font-size:28px; margin:0}
+.x{border:0; background:var(--ivory2); width:40px; height:40px; border-radius:10px; font-size:22px; color:var(--wine)}
+.db{flex:1; overflow-y:auto; padding:6px 22px}
+.empty{text-align:center; color:var(--clay); padding:56px 10px}
+.empty b{display:block; font-family:var(--display); font-weight:400; font-size:26px; color:var(--wine); margin-bottom:6px}
+.line{display:grid; grid-template-columns:1fr auto; gap:6px 12px; padding-block:14px; border-bottom:1px dashed var(--line)}
+.line .n{font-weight:700}
+.line .s{font-size:13px; color:var(--clay)}
+.line .p{font-family:var(--display); font-size:19px; text-align:right}
+.qty{display:flex; align-items:center; gap:8px; justify-self:end}
+.qty button{width:32px; height:32px; border-radius:8px; border:1px solid var(--line); background:#fffaf0; font-weight:700; color:var(--wine)}
+.qty span{min-width:18px; text-align:center; font-weight:700}
+.df{padding:16px 22px 22px; border-top:1.5px solid var(--wine); display:grid; gap:10px}
+.trow{display:flex; justify-content:space-between; font-size:14px; color:var(--clay)}
+.trow.big{font-size:16px; color:var(--ink); font-weight:700; align-items:baseline}
+.trow.big b{font-family:var(--display); font-weight:400; font-size:30px; color:var(--wine)}
+.df .btn{width:100%}
+.df .btn.wine{background:var(--wine); color:var(--ivory)}
+.df .btn.wa{background:#1f7a4a; color:#fff}
+.df textarea{width:100%; height:120px; border:1px solid var(--line); border-radius:10px; padding:10px; font:13px/1.5 var(--body); background:#fffaf0; color:var(--ink)}
+.toast{position:fixed; left:50%; bottom:calc(24px + env(safe-area-inset-bottom,0px)); transform:translate(-50%,160%); background:var(--saffron); color:var(--wine); padding:12px 20px; border-radius:999px; font-weight:700; z-index:60; transition:transform .35s; box-shadow:0 10px 30px rgba(0,0,0,.35); max-width:calc(100% - 32px); text-align:center}
+.toast.on{transform:translate(-50%,0)}
+
+@media (max-width: 960px){
+  .nav nav{display:none}
+  .cartbtn{margin-left:auto}
+  .hero .wrap, .hall .wrap{grid-template-columns:1fr}
+  .archframe{max-width:400px}
+  .cat{grid-template-columns:1fr; gap:24px}
+  .medal{position:static; flex-direction:row; text-align:left; align-items:center; gap:16px; flex-wrap:wrap}
+  .medal .arch{width:110px; flex:none}
+  .medal .txt{flex:1; min-width:180px}
+  .vgrid{grid-template-columns:1fr}
+}
+@media (max-width: 520px){
+  .wrap{padding-inline:16px}
+  .brand b{font-size:17px}
+  .brand small{display:none}
+  .lhead, .row{grid-template-columns:1fr 76px 76px; gap:8px}
+  .row.one, .lhead.one{grid-template-columns:1fr 76px}
+  .row .nm b{font-size:16px}
+  .pb .p{font-size:17px}
+  .archframe .seal{right:-4px; width:84px; height:84px}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important; transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+<style>body{margin:0} img{max-width:100%} [hidden]{display:none!important}</style>
+</head>
+<body>
+
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="arch">MFC</span><span><b>Miran Jee Food Club</b><small>Jahanian</small></span></a>
+    <nav aria-label="Sections">
+      <a href="#menu">Menu</a>
+      <a href="#deals">Deals</a>
+      <a href="#hall">Hall &amp; Events</a>
+      <a href="#visit">Rabta</a>
+    </nav>
+    <button class="cartbtn" id="cartBtn" aria-label="Apna order dekhein">Order <b id="cartCount">0</b></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero jaali">
+    <div class="wrap">
+      <div>
+        <p class="urname ur" style="text-align:left">میراں جی فوڈ کلب</p>
+        <h1>Shahi dastarkhwan, <em>Jahanian ke dil mein</em></h1>
+        <p>Madrasi karahi se Afghani pulao tak, Crown Crust pizza se Lotus shake tak. Family hall, free home delivery, aur raat 2 baje tak garam khana.</p>
+        <div class="btns">
+          <a class="btn solid" href="#menu">Menu dekhein</a>
+          <a class="btn line" href="#deals">Aaj ki deals</a>
+        </div>
+        <div class="facts">
+          <div><b>10 am – 2 am</b>Roz khula</div>
+          <div><b>3 km</b>Free delivery</div>
+          <div><b>AC Hall</b>Birthday · Mehndi</div>
+        </div>
+      </div>
+      <div class="archframe">
+        <div class="inner">
+          <canvas id="karahi3d" aria-label="Ghoomti hui 3D chicken karahi. Drag karke ghumayein."></canvas>
+          <div class="drag">↻ Karahi ko ghumayein</div>
+          <div class="cap"><b>Chicken Karahi White</b><span>Full Rs 1,650 · Half Rs 850</span></div>
+        </div>
+        <div class="seal"><div><span>1300</span>Afghani<br>Pulao</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ribbon" aria-hidden="true"><div class="track" id="ribbon"></div></div>
+
+  <section class="menu" id="menu">
+    <div class="wrap">
+      <div class="shead">
+        <div>
+          <div class="eyebrow">Mukammal Menu</div>
+          <h2>Kya khayenge aaj?</h2>
+          <p>Price par tap karein, item aap ke order mein chala jayega.</p>
+        </div>
+      </div>
+      <div class="groups" role="tablist" id="groups"></div>
+      <div class="chips" role="tablist" id="chips"></div>
+      <div class="cat" id="cat"></div>
+    </div>
+  </section>
+
+  <section class="deals jaali" id="deals">
+    <div class="wrap">
+      <div class="shead">
+        <div>
+          <div class="eyebrow">Bachat wali deals</div>
+          <h2>Deals, akele ya poori family ke liye</h2>
+          <p>Pizza deals, lunch aur midnight offers, student aur family combos.</p>
+        </div>
+      </div>
+      <div class="dtabs" role="tablist" id="dtabs"></div>
+      <div class="dnote" id="dnote"></div>
+      <div class="dgrid" id="dgrid"></div>
+      <div class="sauce">Extra:
+        <button data-sauce="Dip Sauce">+ Dip Sauce · Rs 60</button>
+        <button data-sauce="Mayo Sauce">+ Mayo Sauce · Rs 60</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="hall" id="hall">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Air Conditioned Hall</div>
+        <h2>Aap ki khushi, hamara dastarkhwan</h2>
+        <p>Birthday parties, mehndi aur doosre functions ke liye thanda, saaf hall dastyab hai. Menu aap ki marzi ka, service hamari zimmedari.</p>
+        <div class="btns">
+          <a class="btn gold" href="#visit">Booking ke liye call karein</a>
+        </div>
+      </div>
+      <div class="arches">
+        <div><b>Birthday</b><span>Cake, pizza, deals</span></div>
+        <div><b>Mehndi</b><span>Karahi, pulao, chai</span></div>
+        <div><b>Family</b><span>Dinner &amp; functions</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="visit" id="visit">
+    <div class="wrap">
+      <div class="shead">
+        <div>
+          <div class="eyebrow">Rabta</div>
+          <h2>Tashreef layein ya ghar mangwayein</h2>
+        </div>
+      </div>
+      <div class="vgrid">
+        <div class="vc">
+          <div class="eyebrow">Branch 1</div>
+          <b>Near Ice Factory, Rahim Shah Road, Jahanian</b>
+          <span>Roz 10:00 am se raat 2:00 am tak</span>
+        </div>
+        <div class="vc">
+          <div class="eyebrow">Order &amp; Booking</div>
+          <div class="phone"><span id="ph1">0309-7000178</span><button class="copy" data-copy="0309-7000178">Copy</button></div>
+          <div class="phone"><span id="ph2">0306-7587938</span><button class="copy" data-copy="0306-7587938">Copy</button></div>
+        </div>
+        <div class="vc">
+          <div class="eyebrow">Home Delivery</div>
+          <b>3 km tak bilkul free</b>
+          <span>Shehar mein minimum order Rs 600. Is se kam order par Rs 40 delivery charges. Shehar se bahar bhi delivery hoti hai.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="ur">میراں جی فوڈ کلب</span>
+    <span>Prices menu card ke mutabiq, Pakistani Rupay mein. Tabdeeli mumkin hai, order par confirm kar lein.</span>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Aap ka order" aria-hidden="true">
+  <div class="dh"><h3>Aap ka Order</h3><button class="x" id="closeCart" aria-label="Band karein">×</button></div>
+  <div class="db" id="lines"></div>
+  <div class="df">
+    <div class="trow"><span>Items</span><span id="sub">Rs 0</span></div>
+    <div class="trow"><span>Delivery</span><span id="deliv">—</span></div>
+    <div class="trow big"><span>Total</span><b id="total">Rs 0</b></div>
+    <a class="btn wa" id="waBtn" href="https://wa.me/923097000178" target="_blank" rel="noopener">WhatsApp par order bhejein</a>
+    <button class="btn wine" id="copyOrder">Order ka text copy karein</button>
+    <button class="btn line" id="clearOrder" style="color:var(--wine); border-color:var(--line)">Sab hata dein</button>
+    <textarea id="copyBox" hidden readonly aria-label="Order ka text"></textarea>
+  </div>
+</aside>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* =============== MENU DATA (MFC menu cards) =============== */
+// type: fh = full/half, one = single price, pz = pizza sizes
+const MENU = [
+ {g:"Desi Khana", id:"karahi", name:"Chicken Karahi", ur:"چکن کڑاہی", art:"karahi", type:"fh", note:"Full 3–4 afraad, Half 2 afraad ke liye", items:[
+  ["Chicken Karahi Red","چکن کڑاہی ریڈ",1500,750],["Chicken Karahi White","چکن کڑاہی وائٹ",1650,850],["Chicken Karahi Madrasi","چکن کڑاہی مدراسی",1650,850],
+  ["Chicken Karahi Achari","چکن کڑاہی اچاری",1550,800],["Tikka Karahi","تکہ کڑاہی",2000,1000],["Kabab Masala Karahi","کباب مصالحہ کڑاہی",1200,600],
+  ["Desi Murgha","دیسی مرغا",2800,1400],["Batair Karahi","بٹیر کڑاہی",2400,1200],["Miran Ji Special Karahi","میراں جی اسپیشل کڑاہی",1650,850]]},
+ {g:"Desi Khana", id:"handi", name:"Handi & Chinese", ur:"ہانڈی اور چائنیز", art:"handi", type:"fh", note:"Garam naan ke saath behtareen", items:[
+  ["Chicken Handi","چکن ہانڈی",1600,800],["Chicken White Handi","چکن وائٹ ہانڈی",1700,850],["Chicken Achari Handi","چکن اچاری ہانڈی",1700,850],
+  ["Chicken Jalfrezi","چکن جلفریزی",1800,900],["Chicken Ginger","چکن جنجر",1800,900],["Chicken Shashlik","چکن شاشلک",1800,900],["Chicken Manchurian","چکن منچورین",null,780]]},
+ {g:"Desi Khana", id:"mutton", name:"Mutton & Beef", ur:"مٹن اور بیف کڑاہی", art:"karahi2", type:"one", note:"Full karahi, taza gosht", items:[
+  ["Mutton Karahi Sada","مٹن کڑاہی سادہ",2800],["Mutton Karahi Makhni","مٹن کڑاہی مکھنی",3000],["Mutton Karahi White","مٹن کڑاہی وائٹ",3000],["Mutton Karahi Achari","مٹن کڑاہی اچاری",2850],
+  ["Beef Karahi Red","بیف کڑاہی ریڈ",2000],["Beef Karahi White","بیف کڑاہی وائٹ",2200],["Beef Karahi Achari","بیف کڑاہی اچاری",2050]]},
+ {g:"Desi Khana", id:"rice", name:"Chawal", ur:"رائس", art:"rice", type:"fh", note:"Pulao aur fried rice", items:[
+  ["Chicken Afghani Pulao","چکن افغانی پلاؤ",1300,650],["Chicken Yakhni Pulao","چکن یخنی پلاؤ",1000,500],["Chicken Fried Rice","چکن فرائیڈ رائس",1000,500],
+  ["Vegetable Fried Rice","ویجیٹیبل فرائیڈ رائس",800,400],["Egg Fried Rice","ایگ فرائیڈ رائس",900,450],["Miran Jee Special Chinese Rice","میراں جی اسپیشل چائنیز رائس",1300,650]]},
+ {g:"Desi Khana", id:"soup", name:"Soup", ur:"سوپ", art:"soup", type:"fh", note:"Sardi ki shaam ke liye", items:[
+  ["Hot and Sour Soup","ہاٹ اینڈ ساور سوپ",700,400],["Corn Soup","کارن سوپ",700,400],["Miran Jee Special Soup","میراں جی اسپیشل سوپ",800,450]]},
+ {g:"Desi Khana", id:"daal", name:"Daal Sabzi", ur:"دال سبزی", art:"daal", type:"one", note:"Ghar jaisa zaiqa", items:[
+  ["Mix Sabzi","مکس سبزی",250],["Dall Mash","دال ماش",250],["Shahi Dall","شاہی دال",350]]},
+
+ {g:"Pizza", id:"standard", name:"Standard Pizza", art:"pizza", type:"pz", p:[520,1000,1350,1800], items:["Vege Lover Pizza","Cheese Lover Pizza","Chicken Tikka Pizza","Chicken Fajita Pizza","Simple Malai Boti Pizza","Supreme Pizza","Shahi Pizza","Achari Pizza","Bonfire Pizza"]},
+ {g:"Pizza", id:"classic", name:"Classic Pizza", art:"pizza", type:"pz", p:[550,1100,1500,1900], items:["Crush Kabab Pizza","Creamy Pizza","Crunchy Pizza","Pepperoni Pizza"]},
+ {g:"Pizza", id:"premium", name:"Premium Pizza", art:"pizza2", type:"pz", p:[650,1250,1650,2150], items:["Lazania Malai Boti Pizza","Behari Kabab Pizza","Seekh Kabab Pizza","Extreme Pizza","Squire Crust Pizza","Cheese Crust Pizza","Multani Pizza","Lazania Pizza","Crown Crust Pizza"]},
+ {g:"Pizza", id:"special", name:"Special Pizzaz", art:"pizza2", type:"pz", p:[750,1450,1800,2550], items:["Double Seekh Kabab Pizza","Special Multan Sultan Pizza","Mughlai Pizza","Crispy Crust Pizza","4X Pizza (koi 4 flavours)","Royal Crust Pizza"]},
+ {g:"Pizza", id:"newadd", name:"New Addition", art:"pizza", type:"pz", p:[null,1500,2000,null], note:"Sirf Medium aur Large", items:["Double Extreme Pizza","Lazania Double Extreme","Seekh Kabab Double Extreme","Parry Parry Extreme"]},
+ {g:"Pizza", id:"signature", name:"Signature Pizza", art:"pizza2", type:"sizes", note:"Mazz, Steak aur Mataka", items:[
+  ["Special Mazz Pizza",[["Large",2400],["Family",3200]]],["Special Steak Pizza",[["Medium",1100],["Large",1400]]],
+  ["Mataka Malai Boti Pizza",[["Mataka",950]]],["Mataka Tikka Boti Pizza",[["Mataka",950]]],["Mataka Kabab Pizza",[["Mataka",950]]],
+  ["Extra Topping (Chicken / Cheese)",[["S",200],["M",250],["L",350],["F",450]]]]},
+
+ {g:"Fast Food", id:"burgers", name:"Burgers", art:"burger", type:"one", note:"Extra cheese slice Rs 70", items:[
+  ["Zinger Burger",350],["Chicken Burger",300],["Mighty Burger",400],["Pizza Burger",550],["Jalapeño Burger",350],["Tikka Burger",300],
+  ["Double Decker Burger",550],["Double Patty Burger",550],["MFC 20-20 Burger",400],["Special Grill Tikka Burger",450],["Special Saucy Grill Burger",600],["Extra Cheese Slice",70]]},
+ {g:"Fast Food", id:"fries", name:"French Fries", art:"fries", type:"one", items:[["French Fries Small",250],["French Fries Large",350],["French Fries Family",500],["Loaded Pizza Fries Small",500],["Loaded Pizza Fries Large",700]]},
+ {g:"Fast Food", id:"rolls", name:"Chicken Rolls", art:"roll", type:"one", note:"Extra cheese slice Rs 70", items:[
+  ["MFC Special Malai Boti Roll",330],["Shawarma Roll",230],["Cheese Shawarma Roll",270],["Paratha Roll",300],["Zinger Paratha Roll",380],["Zinger Shawarma Roll",380],["Kabab Roll",300],["Arabian Shawarma",300],["Twister Roll",340]]},
+ {g:"Fast Food", id:"wings", name:"Hot Wings", art:"wings", type:"one", items:[["6 Pc Hot Wings / Nuggets",350],["12 Pc Hot Wings / Nuggets",600],["10 Pc Oven Baked Wings",600],["10 Pc Honey Wings",600],["10 Pc Crunchy Hot Shot",450]]},
+ {g:"Fast Food", id:"pasta", name:"Pasta", art:"pasta", type:"fh", items:[["MFC 20-20 Pasta","",700,500],["Flaming Pasta","",650,450],["Crunchy Pasta","",700,500],["White Sauce Pasta","",700,500]]},
+ {g:"Fast Food", id:"sandwich", name:"Sandwich", art:"sandwich", type:"one", items:[["Tikka Sandwich",550],["Mexican Sandwich",600],["Malai Boti Sandwich",600],["Kabab Sandwich",600]]},
+ {g:"Fast Food", id:"broast", name:"Broast Chicken", art:"broast", type:"one", items:[["Leg Broast / Grill Leg",330],["Chest Broast / Grill Chest",380]]},
+
+ {g:"Meetha & Thanda", id:"barista", name:"Barista Shakes", art:"shake", type:"one", items:[["Brownie Shake",300],["Power Shake",300],["Love Story Shake",400],["Breakup Shake",300],["Lotus Shake",400],["Butter Scotch Shake",300],["Date Shake",300],["Dates & Banana Shake",300],["Nutella Shake",300],["Almond Shake",300],["Walnut Shake",300]]},
+ {g:"Meetha & Thanda", id:"icshakes", name:"Ice Cream Shakes", art:"shake2", type:"one", items:[["Oreo Shake",299],["Kit Kat Shake",350],["Strawberry Shake",299],["Blueberry Shake",299],["Vanilla Shake",299],["Chocolate Shake",299],["Coffee Shake",299],["Mango Shake",299],["Kulfa Shake",299],["Caramel Shake",299],["Signature Shake",299],["Pineapple Shake",299]]},
+ {g:"Meetha & Thanda", id:"coffee", name:"Cold Coffee", art:"coffee", type:"one", items:[["MFC Special Cold Coffee",400],["Irish Cold Coffee",350],["Simple Cold Coffee",350],["Ice Mocha",350],["Ice Latte",350],["Peanut Butter",350],["Frozen Vanilla",350],["Ice Caramel",350],["Lotus Special",350]]},
+ {g:"Meetha & Thanda", id:"cake", name:"Cake", art:"cake", type:"one", note:"Birthday ke liye pehle se order karein", items:[["1 Pound Chocolate Cake",550],["1 Pound Pineapple Cake",500],["2 Pound Chocolate Cake",1100],["2 Pound Pineapple Cake",1000]]},
+ {g:"Meetha & Thanda", id:"icecream", name:"Ice Cream", art:"scoop", type:"one", items:[["Vanilla Ice Cream",199],["Chocolate Ice Cream",199],["Pista Ice Cream",199],["Strawberry Ice Cream",199],["Mango Ice Cream",199],["Tutti Frutti",199],["Kulfa",199],["Caramel",199]]},
+ {g:"Meetha & Thanda", id:"marg", name:"Margarita", art:"marg", type:"one", items:[["Fresh Lime",120],["Mint Margarita",170],["Strawberry",170],["Blue Berry",170],["Lemonade",170],["Pina Colada",300]]},
+ {g:"Meetha & Thanda", id:"mock", name:"Mocktails", art:"mock", type:"one", items:[["Passion Fruits",250],["Pomegranate",250],["Pineapple",250],["Pina Colada",250],["Blue Colada",250]]},
+ {g:"Meetha & Thanda", id:"smooth", name:"Smoothies", art:"smooth", type:"one", items:[["Strawberry Banana",340],["Blue Berry",340],["Mix Fruit",340],["Blue Pineapple",340],["Banana Coconut",340]]},
+ {g:"Meetha & Thanda", id:"icedtea", name:"Iced Tea", art:"tea", type:"one", items:[["Cinnamon Iced Tea",180],["Lemon Iced Tea",180],["Strawberry Ice Tea",180],["Blue Ice Tea",180]]},
+ {g:"Meetha & Thanda", id:"chai", name:"Special Tea", art:"chai", type:"one", items:[["Chai Chino",150],["Doodh Patti",100],["Cardamom Tea",150],["Black Tea",150],["Simple Green Tea",100],["Flavored Green Tea",100]]},
+ {g:"Meetha & Thanda", id:"chaat", name:"Fruit Chaat", art:"chaat", type:"one", items:[["Fruit Chaat",250],["Cream Chaat",220],["Russian Salad",350],["Macaroni Chili with Sweet",299]]},
+ {g:"Meetha & Thanda", id:"drinks", name:"Cold Drinks", art:"drink", type:"one", note:"Drinks ki price counter se confirm karein", items:[["500ml Drink",null],["1000ml Drink",null],["1500ml Drink",null],["2.25 Liter Drink",null],["Tin Pack",null],["Sting 500ml",null],["500ml Mineral Water",null],["1500ml Mineral Water",null]]}
+];
+const SIZE = ["Small","Medium","Large","Family"];
+
+const DEALS = {
+ "Pizza Deals":{note:"Special pizza deals", list:[
+  [1050,["1 Small Lazania Pizza","1 Zinger Burger","500ml Drink"]],[1100,["1 Tikka Pizza Small","1 Fajita Pizza Small","500ml Drink"]],
+  [1630,["1 Tikka Pizza Medium","1 Fajita Pizza Small","1000ml Drink"]],[2350,["1 Seekh Kabab Pizza Large","12 Pc Hot Wings","1500ml Drink"]],
+  [2150,["1 Tikka Pizza Medium","1 Fajita Pizza Medium","1000ml Drink"]],[2750,["1 Tikka Pizza Large","1 Fajita Pizza Large","1500ml Drink"]]]},
+ "Lunch & Midnight":{note:"Lunch: 1:00 pm – 3:00 pm · Midnight: 10:00 pm – 12:00 am", list:[
+  [1130,["3 Zinger Burgers","1 Liter Drink"]],[1070,["1 Medium Tikka Pizza","Half Liter Coke"]],[1400,["1 Large Tikka Pizza","1 Liter Drink"]],
+  [1500,["4 Zinger Burgers","1.5 Liter Coke"]],[2000,["1 Large Tikka Pizza","1 Small Kabab Pizza","1.5 Liter Coke"]],[4500,["1 Large Lazania Pizza","1 Large Kabab Pizza","1 Large Fajita Pizza","2.25 Liter Coke"]],
+  [650,["1 Creamy Sandwich","500ml Drink"]],[1900,["1 Family Tikka Pizza","1.5 Liter Drink"]],[1300,["6 Wings + 6 Nuggets","1 Small Kabab Pizza","1 Liter Drink"]],
+  [2400,["1 Shahi Pizza Large","1 Bonfire Pizza Medium","1 Liter Drink"]],[700,["1 Lazania Pizza Small","500ml Drink"]],[1200,["Paratha, Kabab, Zinger Shawarma aur Zinger Paratha Roll","1 Liter Drink"]]]},
+ "1 Person":{note:"Akele ke liye poora khana", list:[
+  [390,["1 Chicken Burger","500ml Drink"]],[390,["1 Tikka Burger","500ml Drink"]],[440,["1 Zinger Burger","500ml Drink"]],
+  [440,["1 Jalapeño Burger","500ml Drink"]],[620,["1 Chicken Burger","Small Fries","500ml Drink"]],[670,["1 Zinger Burger","Small Fries","500ml Drink"]]]},
+ "2 Person":{note:"Do dost, ek deal", list:[
+  [500,["2 Shawarma Rolls","500ml Drink"]],[670,["2 Chicken Burgers","500ml Drink"]],[660,["2 Paratha Rolls","500ml Drink"]],
+  [720,["1 Flaming Pasta Full","500ml Drink"]],[580,["4 Pc Behari Roll","500ml Drink"]],[770,["2 Zinger Burgers","500ml Drink"]]]},
+ "Family":{note:"Poore ghar ke liye", list:[
+  [1850,["5 Zinger Burgers","1500ml Drink"]],[2850,["2 Small Tikka Pizza","4 Zinger Burgers","1 Large Fries","1500ml Drink"]],
+  [3000,["1 Large Lazania Pizza","2 Zinger + 2 Chicken Burgers","1 Large Fries","2.25 Liter Drink"]]]},
+ "Student":{note:"Student budget, poora pait", list:[
+  [1030,["1 Small Pizza Kabab","6 Pc Wings","500ml Drink"]],[1370,["1 Medium Pizza Kabab","1 Liter Drink"]],[1400,["1 Large Simple Malai Boti Pizza","1 Liter Drink"]]]}
+};
+
+/* =============== ILLUSTRATIONS =============== */
+const pizzaSvg = (crust="#c9782e", cheese="#f5c142", top="#c4321a")=>`<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="${crust}"/><circle cx="50" cy="50" r="38" fill="${cheese}"/>
+ <g fill="${top}"><circle cx="36" cy="36" r="7"/><circle cx="62" cy="34" r="6"/><circle cx="58" cy="62" r="7"/><circle cx="34" cy="62" r="5.5"/></g>
+ <g fill="#4f7a2a"><rect x="46" y="46" width="9" height="3" rx="1.5"/><rect x="24" y="47" width="7" height="3" rx="1.5"/><rect x="66" y="48" width="7" height="3" rx="1.5" transform="rotate(60 70 49)"/></g>
+ <g fill="#2a1a12"><circle cx="48" cy="26" r="2.6"/><circle cx="72" cy="58" r="2.6"/><circle cx="44" cy="72" r="2.6"/></g><path d="M50 50 L50 4 A46 46 0 0 1 89 26 Z" fill="#000" opacity=".12"/></svg>`;
+const karahiSvg = (g="#9a2f14", g2="#c65a2a")=>`<svg viewBox="0 0 120 100"><rect x="2" y="40" width="18" height="12" rx="6" fill="#2a2621"/><rect x="100" y="40" width="18" height="12" rx="6" fill="#2a2621"/>
+ <ellipse cx="60" cy="50" rx="46" ry="40" fill="#1e1b18"/><ellipse cx="60" cy="48" rx="40" ry="34" fill="${g}"/>
+ <g fill="${g2}"><ellipse cx="46" cy="38" rx="9" ry="7"/><ellipse cx="72" cy="36" rx="8" ry="6"/><ellipse cx="70" cy="60" rx="9" ry="7"/><ellipse cx="48" cy="60" rx="8" ry="6"/></g>
+ <g stroke="#f0dfa8" stroke-width="2" stroke-linecap="round"><path d="M56 28 L64 30"/><path d="M40 50 L44 56"/><path d="M78 48 L82 54"/></g>
+ <g stroke="#4f7a2a" stroke-width="3" stroke-linecap="round"><path d="M58 50 Q66 46 72 50"/><path d="M36 42 Q40 34 46 32"/></g></svg>`;
+const glass = (c1,c2,top="")=>`<svg viewBox="0 0 100 100"><rect x="58" y="4" width="4" height="34" rx="2" fill="#e8a33d" transform="rotate(14 60 21)"/><path d="M28 22 L72 22 L66 90 L34 90 Z" fill="#ffffff22" stroke="#f4ead766" stroke-width="2"/>
+ <path d="M31 40 L69 40 L66 88 L34 88 Z" fill="${c1}"/><path d="M32 40 L68 40 L67 56 L33 56 Z" fill="${c2}"/>${top}</svg>`;
+const cream = `<ellipse cx="50" cy="40" rx="19" ry="4" fill="#f4ead7"/><circle cx="44" cy="36" r="6" fill="#f4ead7"/><circle cx="54" cy="35" r="6" fill="#f4ead7"/>`;
+const lime = `<circle cx="70" cy="24" r="10" fill="#b5d65a"/><circle cx="70" cy="24" r="7" fill="#dff09a"/>`;
+const ART = {
+ karahi: karahiSvg(), karahi2: karahiSvg("#6e1f0e","#8f3a1a"),
+ handi:`<svg viewBox="0 0 100 100"><path d="M20 40 Q16 86 50 90 Q84 86 80 40 Z" fill="#b3521f"/><path d="M22 52 Q50 62 78 52" stroke="#7a2e12" stroke-width="3" fill="none"/><ellipse cx="50" cy="40" rx="32" ry="9" fill="#7a2e12"/><ellipse cx="50" cy="40" rx="27" ry="7" fill="#c9652a"/><circle cx="42" cy="39" r="3" fill="#8f3a1a"/><circle cx="58" cy="40" r="3" fill="#8f3a1a"/><path d="M46 38 L52 36" stroke="#4f7a2a" stroke-width="2"/><path d="M34 26 Q30 18 36 10 M50 26 Q46 18 52 10 M64 26 Q60 18 66 10" stroke="#f4ead788" stroke-width="2.5" fill="none"/></svg>`,
+ rice:`<svg viewBox="0 0 100 100"><ellipse cx="50" cy="66" rx="44" ry="18" fill="#d8c7a3"/><ellipse cx="50" cy="62" rx="38" ry="14" fill="#efe1bd"/><path d="M16 62 Q22 28 50 26 Q78 28 84 62 Q50 72 16 62 Z" fill="#f0d27c"/><g fill="#f7e3a6"><circle cx="34" cy="48" r="2.5"/><circle cx="44" cy="40" r="2.5"/><circle cx="58" cy="38" r="2.5"/><circle cx="68" cy="48" r="2.5"/><circle cx="50" cy="52" r="2.5"/></g><g fill="#e39a2e"><circle cx="40" cy="50" r="2"/><circle cx="62" cy="46" r="2"/></g><path d="M40 34 Q50 22 62 34 Q54 40 46 39 Z" fill="#9c4a1e"/><g stroke="#5f8d34" stroke-width="2.5" stroke-linecap="round"><path d="M30 44 L33 40"/><path d="M72 44 L69 40"/></g></svg>`,
+ soup:`<svg viewBox="0 0 100 100"><path d="M12 46 L88 46 Q86 84 50 86 Q14 84 12 46 Z" fill="#f4ead7"/><ellipse cx="50" cy="46" rx="38" ry="9" fill="#e0a64a"/><g fill="#f7d27c"><circle cx="40" cy="45" r="2.5"/><circle cx="56" cy="47" r="2.5"/><circle cx="48" cy="43" r="2"/></g><g fill="#5f8d34"><circle cx="62" cy="44" r="2"/><circle cx="36" cy="47" r="2"/></g><path d="M36 34 Q32 24 38 14 M52 34 Q48 24 54 14" stroke="#f4ead788" stroke-width="3" fill="none"/></svg>`,
+ daal:`<svg viewBox="0 0 100 100"><ellipse cx="50" cy="60" rx="40" ry="22" fill="#6e5238"/><ellipse cx="50" cy="56" rx="36" ry="18" fill="#d99a2b"/><g fill="#b5701c"><circle cx="40" cy="54" r="2"/><circle cx="58" cy="58" r="2"/><circle cx="50" cy="50" r="2"/><circle cx="64" cy="52" r="2"/></g><g fill="#4f7a2a"><circle cx="46" cy="58" r="2.2"/><circle cx="56" cy="50" r="2.2"/></g><path d="M40 52 L46 50" stroke="#8a2a14" stroke-width="3" stroke-linecap="round"/></svg>`,
+ pizza: pizzaSvg(), pizza2: pizzaSvg("#b56a26","#f2c85c","#7a2410"),
+ burger:`<svg viewBox="0 0 100 100"><path d="M14 44 Q14 16 50 16 Q86 16 86 44 Z" fill="#d98a2b"/><g fill="#fbe7b9"><ellipse cx="36" cy="26" rx="2" ry="1.2"/><ellipse cx="52" cy="22" rx="2" ry="1.2"/><ellipse cx="64" cy="30" rx="2" ry="1.2"/></g><path d="M10 48 Q20 42 30 48 T50 48 T70 48 T90 48 L90 54 L10 54 Z" fill="#7fae48"/><rect x="12" y="54" width="76" height="12" rx="4" fill="#b8652a"/><rect x="12" y="66" width="76" height="5" fill="#f7c54a"/><path d="M14 73 L86 73 Q86 88 50 88 Q14 88 14 73 Z" fill="#d98a2b"/></svg>`,
+ fries:`<svg viewBox="0 0 100 100"><g fill="#f7c54a"><rect x="30" y="12" width="7" height="44" rx="2" transform="rotate(-8 33 34)"/><rect x="41" y="8" width="7" height="48" rx="2"/><rect x="52" y="10" width="7" height="46" rx="2" transform="rotate(6 55 33)"/><rect x="62" y="16" width="7" height="40" rx="2" transform="rotate(12 65 36)"/></g><path d="M22 40 L78 40 L70 92 L30 92 Z" fill="#c7351b"/><path d="M22 40 Q50 54 78 40" fill="#9c2a14"/><circle cx="50" cy="68" r="10" fill="#f4ead7"/><text x="50" y="72" text-anchor="middle" font-size="8.5" font-weight="700" fill="#9c2a14" font-family="sans-serif">MFC</text></svg>`,
+ roll:`<svg viewBox="0 0 100 100"><g transform="rotate(-30 50 50)"><rect x="14" y="34" width="72" height="32" rx="16" fill="#f0d59a"/><ellipse cx="80" cy="50" rx="9" ry="16" fill="#c7351b"/><ellipse cx="80" cy="50" rx="6" ry="12" fill="#f7c54a"/><circle cx="79" cy="46" r="2.5" fill="#7fae48"/><path d="M24 38 Q34 50 24 62 M40 36 Q50 50 40 64 M56 36 Q66 50 56 64" stroke="#d0a55c" stroke-width="2.5" fill="none"/></g></svg>`,
+ wings:`<svg viewBox="0 0 100 100"><path d="M20 60 Q18 36 40 32 Q56 30 58 46 Q60 62 40 70 Q24 74 20 60 Z" fill="#c9652a"/><path d="M50 70 Q48 48 68 44 Q84 42 86 58 Q88 74 68 80 Q52 84 50 70 Z" fill="#b8521e"/><g fill="#e07a36"><circle cx="34" cy="46" r="3"/><circle cx="44" cy="54" r="2.5"/><circle cx="66" cy="58" r="3"/><circle cx="74" cy="66" r="2.5"/></g></svg>`,
+ pasta:`<svg viewBox="0 0 100 100"><rect x="10" y="30" width="80" height="52" rx="10" fill="#7a2e12"/><rect x="15" y="34" width="70" height="44" rx="7" fill="#f3e0a6"/><g stroke="#e6c46c" stroke-width="3" fill="none"><path d="M20 44 Q35 38 50 46 T80 42"/><path d="M20 56 Q35 50 50 58 T80 54"/><path d="M20 68 Q35 62 50 70 T80 66"/></g><g fill="#c4321a"><circle cx="34" cy="50" r="3"/><circle cx="62" cy="62" r="3"/></g></svg>`,
+ sandwich:`<svg viewBox="0 0 100 100"><path d="M12 72 L50 20 L88 72 Z" fill="#e8b563"/><g stroke="#9a5d1c" stroke-width="3"><path d="M30 50 L48 70"/><path d="M42 36 L66 66"/><path d="M58 40 L40 64"/></g><rect x="12" y="72" width="76" height="6" fill="#7fae48"/><rect x="12" y="78" width="76" height="5" fill="#f7c54a"/><rect x="12" y="83" width="76" height="6" rx="2" fill="#e8b563"/></svg>`,
+ broast:`<svg viewBox="0 0 100 100"><path d="M26 30 Q50 10 72 34 Q86 52 70 70 Q52 84 36 70 Q14 52 26 30 Z" fill="#c9652a"/><g fill="#e8903c"><circle cx="40" cy="36" r="4"/><circle cx="56" cy="30" r="3.5"/><circle cx="64" cy="50" r="4"/><circle cx="44" cy="58" r="3"/></g><rect x="62" y="66" width="8" height="22" rx="4" fill="#f4ead7" transform="rotate(-35 66 77)"/><circle cx="76" cy="86" r="5" fill="#f4ead7"/><circle cx="80" cy="81" r="5" fill="#f4ead7"/></svg>`,
+ shake: glass("#7a3f22","#b8794c",cream), shake2: glass("#e86c8a","#f4b9c8",cream), coffee: glass("#9a6238","#caa079",cream),
+ marg: glass("#9ed45a","#d9f08a",lime), mock: glass("#2f8fd1","#7ec8f0",lime), smooth: glass("#e05a4a","#f5a66c",lime), tea: glass("#9a3a14","#c9652a",lime),
+ cake:`<svg viewBox="0 0 100 100"><ellipse cx="50" cy="84" rx="42" ry="8" fill="#f4ead7"/><rect x="18" y="44" width="64" height="38" rx="6" fill="#5a2c16"/><rect x="18" y="58" width="64" height="5" fill="#f4ead7"/><path d="M18 50 Q26 58 34 50 T50 50 T66 50 T82 50 L82 44 L18 44 Z" fill="#3a1a0c"/><ellipse cx="50" cy="44" rx="32" ry="7" fill="#6e3a1c"/><g fill="#c4321a"><circle cx="36" cy="41" r="3.5"/><circle cx="50" cy="39" r="3.5"/><circle cx="64" cy="41" r="3.5"/></g><rect x="48" y="24" width="4" height="14" fill="#e8a33d"/><path d="M50 16 Q54 21 50 24 Q46 21 50 16 Z" fill="#f3c476"/></svg>`,
+ scoop:`<svg viewBox="0 0 100 100"><path d="M30 56 L50 94 L70 56 Z" fill="#d9a05b"/><path d="M34 60 L66 60 M38 68 L62 68" stroke="#b77e3c" stroke-width="2"/><circle cx="40" cy="48" r="16" fill="#f4b9c8"/><circle cx="60" cy="48" r="16" fill="#f3e3b8"/><circle cx="50" cy="32" r="16" fill="#8a4a22"/><circle cx="50" cy="16" r="4" fill="#c4321a"/></svg>`,
+ chai:`<svg viewBox="0 0 100 100"><path d="M18 40 L74 40 L68 80 Q66 88 58 88 L34 88 Q26 88 24 80 Z" fill="#f4ead7"/><path d="M74 48 Q90 48 88 60 Q86 72 70 70" fill="none" stroke="#f4ead7" stroke-width="6"/><ellipse cx="46" cy="40" rx="28" ry="6" fill="#b07a4a"/><path d="M36 30 Q32 22 38 14 M50 30 Q46 22 52 14" stroke="#f4ead788" stroke-width="3" fill="none"/></svg>`,
+ chaat:`<svg viewBox="0 0 100 100"><g><circle cx="34" cy="46" r="10" fill="#c7351b"/><circle cx="52" cy="40" r="10" fill="#7fae48"/><circle cx="68" cy="46" r="10" fill="#f7c54a"/><circle cx="44" cy="52" r="8" fill="#b43a8a"/><circle cx="60" cy="54" r="8" fill="#f09a3a"/></g><path d="M12 54 L88 54 Q84 86 50 88 Q16 86 12 54 Z" fill="#f4ead7"/></svg>`,
+ drink:`<svg viewBox="0 0 100 100"><rect x="44" y="6" width="12" height="8" rx="2" fill="#c7351b"/><path d="M44 14 L56 14 L58 26 Q68 34 68 46 L68 88 Q68 94 62 94 L38 94 Q32 94 32 88 L32 46 Q32 34 42 26 Z" fill="#1c0a06"/><rect x="32" y="52" width="36" height="18" fill="#c7351b"/><path d="M38 32 Q36 50 38 84" stroke="#ffffff33" stroke-width="3" fill="none"/></svg>`
+};
+
+/* =============== STATE / HELPERS =============== */
+const $ = s => document.querySelector(s);
+const fmt = n => "Rs " + n.toLocaleString("en-US");
+const esc = s => String(s).replace(/[&<>"]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const cart = new Map();
+let curGroup = MENU[0].g, curCat = MENU[0].id, pzSize = 1;
+
+/* =============== MENU UI =============== */
+const groupsList = [...new Set(MENU.map(m=>m.g))];
+function renderGroups(){
+  $("#groups").innerHTML = groupsList.map(g=>`<button role="tab" aria-selected="${g===curGroup}" data-g="${g}">${g}</button>`).join("");
+}
+function renderChips(){
+  $("#chips").innerHTML = MENU.filter(m=>m.g===curGroup).map(m=>`<button role="tab" aria-selected="${m.id===curCat}" data-c="${m.id}">${m.name}</button>`).join("");
+}
+function pb(label, price, key){
+  if(price==null) return `<button class="pb" data-k="${esc(key)}" data-p=""><span class="p" style="font-size:14px">Counter</span><span class="a">+ Add</span></button>`;
+  return `<button class="pb" data-k="${esc(key)}" data-p="${price}" aria-label="${esc(key.split("|")[0])} ${label} add karein"><span class="p">${price.toLocaleString("en-US")}</span><span class="a">${label}</span></button>`;
+}
+function renderCat(){
+  const m = MENU.find(x=>x.id===curCat);
+  let rows = "", head = "";
+  if(m.type==="fh"){
+    head = `<div class="lhead"><span>Dish</span><span>Full</span><span>Half</span></div>`;
+    rows = m.items.map(([n,u,f,h],i)=>`<div class="row" style="animation-delay:${i*30}ms"><div class="nm"><b>${n}</b>${u?`<span class="ur">${u}</span>`:""}</div>
+      ${f==null?`<span></span>`:pb("Full",f,n+"|Full")}${pb("Half",h,n+"|Half")}</div>`).join("");
+  } else if(m.type==="one"){
+    head = `<div class="lhead one"><span>Item</span><span>Price</span></div>`;
+    rows = m.items.map((it,i)=>{ const hasUr = it.length===3; const n=it[0], u=hasUr?it[1]:"", p=hasUr?it[2]:it[1];
+      return `<div class="row one" style="animation-delay:${i*30}ms"><div class="nm"><b>${n}</b>${u?`<span class="ur">${u}</span>`:""}</div>${pb("Add",p,n+"|"+m.name)}</div>`; }).join("");
+  } else if(m.type==="pz"){
+    const p = m.p[pzSize];
+    head = `<div class="lhead one"><span>Pizza · ${SIZE[pzSize]}</span><span>Price</span></div>`;
+    rows = m.items.map((n,i)=>`<div class="row one" style="animation-delay:${i*30}ms"><div class="nm"><b>${n}</b></div>${p?pb(SIZE[pzSize],p,n+"|"+SIZE[pzSize]):`<button class="pb" disabled><span class="a">Is size mein nahi</span></button>`}</div>`).join("");
+  } else if(m.type==="sizes"){
+    head = `<div class="lhead one"><span>Pizza</span><span>Price</span></div>`;
+    rows = m.items.map(([n,opts],i)=>`<div class="row one" style="animation-delay:${i*30}ms;grid-template-columns:1fr auto"><div class="nm"><b>${n}</b></div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end">${opts.map(([l,p])=>`<div style="width:78px">${pb(l,p,n+"|"+l)}</div>`).join("")}</div></div>`).join("");
+  }
+  const sizes = m.type==="pz" ? `<div class="sizes" role="group" aria-label="Pizza size">${SIZE.map((s,i)=>`<button data-s="${i}" aria-pressed="${i===pzSize}">${s}<br><small style="font-weight:400">${m.p[i]??"—"}</small></button>`).join("")}</div>` : "";
+  $("#cat").innerHTML = `<div class="medal"><div class="arch">${ART[m.art]||""}</div><div class="txt"><h3>${m.name}</h3>${m.ur?`<p class="ur">${m.ur}</p>`:""}${m.note?`<p>${m.note}</p>`:""}${sizes}</div></div>
+    <div class="list">${head}${rows}</div>`;
+}
+$("#groups").addEventListener("click", e=>{
+  const b = e.target.closest("[data-g]"); if(!b) return;
+  curGroup = b.dataset.g; curCat = MENU.find(m=>m.g===curGroup).id;
+  renderGroups(); renderChips(); renderCat();
+});
+$("#chips").addEventListener("click", e=>{
+  const b = e.target.closest("[data-c]"); if(!b) return;
+  curCat = b.dataset.c; renderChips(); renderCat();
+  const top = $("#cat").getBoundingClientRect().top + scrollY - 160;
+  if(scrollY > top) scrollTo({top, behavior: reduce?"auto":"smooth"});
+});
+$("#cat").addEventListener("click", e=>{
+  const s = e.target.closest("[data-s]"); if(s){ pzSize = +s.dataset.s; renderCat(); return; }
+  const b = e.target.closest(".pb[data-k]"); if(!b) return;
+  const [name, variant] = b.dataset.k.split("|");
+  addItem(name, variant, b.dataset.p ? +b.dataset.p : null); pop(b);
+});
+
+/* =============== DEALS =============== */
+let curDeal = Object.keys(DEALS)[0];
+function renderDeals(){
+  $("#dtabs").innerHTML = Object.keys(DEALS).map(k=>`<button role="tab" aria-selected="${k===curDeal}" data-d="${k}">${k}</button>`).join("");
+  const d = DEALS[curDeal];
+  $("#dnote").textContent = d.note;
+  $("#dgrid").innerHTML = d.list.map(([p,items],i)=>`<article class="deal tilt" style="animation-delay:${i*40}ms"><div class="no">Deal ${i+1}</div>
+    <ul>${items.map(x=>`<li>${x}</li>`).join("")}</ul><div class="dp">${fmt(p)}</div>
+    <button class="addd" data-deal="${i}">Order mein daalein</button></article>`).join("");
+  bindTilt();
+}
+$("#dtabs").addEventListener("click", e=>{ const b=e.target.closest("[data-d]"); if(b){ curDeal=b.dataset.d; renderDeals(); } });
+$("#dgrid").addEventListener("click", e=>{
+  const b = e.target.closest("[data-deal]"); if(!b) return; const i=+b.dataset.deal; const [p,items]=DEALS[curDeal].list[i];
+  addItem(`${curDeal} Deal ${i+1}`, items.join(", "), p); pop(b);
+});
+document.querySelector(".sauce").addEventListener("click", e=>{ const b=e.target.closest("[data-sauce]"); if(b){ addItem(b.dataset.sauce,"Extra",60); pop(b);} });
+function bindTilt(){
+  if(reduce || matchMedia("(hover: none)").matches) return;
+  document.querySelectorAll(".tilt").forEach(c=>{
+    c.onmousemove = e=>{ const r=c.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+      c.style.transform = `rotateY(${x*14}deg) rotateX(${-y*12}deg) translateZ(8px)`; };
+    c.onmouseleave = ()=> c.style.transform = "";
+  });
+}
+
+/* =============== CART =============== */
+function addItem(name, variant, price){
+  const key = name+"|"+variant; const c = cart.get(key) || {name, variant, price, qty:0}; c.qty++; cart.set(key,c);
+  renderCart(); const cb=$("#cartBtn"); cb.classList.remove("bump"); void cb.offsetWidth; cb.classList.add("bump");
+  toast(`${name} order mein shamil`);
+}
+function orderText(){
+  let t = "Assalam o Alaikum! MFC Jahanian se order:\n\n", sub = 0;
+  cart.forEach(c=>{ t += `• ${c.qty} x ${c.name} (${c.variant})${c.price?` = Rs ${c.price*c.qty}`:""}\n`; if(c.price) sub += c.price*c.qty; });
+  t += `\nTotal: Rs ${sub}${sub && sub<600?" + Rs 40 delivery":""}\n\nNaam:\nAddress:`;
+  return t;
+}
+function renderCart(){
+  let count=0, sub=0, h="";
+  cart.forEach((c,k)=>{ count+=c.qty; if(c.price) sub+=c.price*c.qty;
+    h += `<div class="line"><div><div class="n">${esc(c.name)}</div><div class="s">${esc(c.variant)}${c.price?` · ${fmt(c.price)}`:" · price counter se"}</div></div>
+      <div class="p">${c.price?fmt(c.price*c.qty):"—"}</div><div></div>
+      <div class="qty"><button data-q="-" data-k="${esc(k)}" aria-label="Kam karein">−</button><span>${c.qty}</span><button data-q="+" data-k="${esc(k)}" aria-label="Zyada karein">+</button></div></div>`; });
+  $("#lines").innerHTML = h || `<div class="empty"><b>Abhi khaali hai</b>Menu ya deals mein price par tap karein.</div>`;
+  $("#cartCount").textContent = count;
+  const del = sub>0 && sub<600 ? 40 : 0;
+  $("#sub").textContent = fmt(sub);
+  $("#deliv").textContent = sub===0 ? "—" : del ? "Rs 40 (Rs 600 se kam)" : "Free (3 km tak)";
+  $("#total").textContent = fmt(sub+del);
+  $("#waBtn").href = "https://wa.me/923097000178?text=" + encodeURIComponent(cart.size ? orderText() : "Assalam o Alaikum! MFC Jahanian se order karna hai.");
+}
+$("#lines").addEventListener("click", e=>{
+  const b=e.target.closest("[data-q]"); if(!b) return; const c=cart.get(b.dataset.k); if(!c) return;
+  c.qty += b.dataset.q==="+"?1:-1; if(c.qty<=0) cart.delete(b.dataset.k); renderCart();
+});
+function openCart(v){ $("#drawer").classList.toggle("on",v); $("#scrim").classList.toggle("on",v); $("#drawer").setAttribute("aria-hidden",!v); }
+$("#cartBtn").onclick=()=>openCart(true); $("#closeCart").onclick=()=>openCart(false); $("#scrim").onclick=()=>openCart(false);
+document.addEventListener("keydown", e=>{ if(e.key==="Escape") openCart(false); });
+$("#clearOrder").onclick=()=>{ cart.clear(); renderCart(); $("#copyBox").hidden=true; toast("Order khaali kar diya"); };
+function copyText(t, ok){
+  const fb = ()=>{ const ta=$("#copyBox"); ta.value=t; ta.hidden=false; ta.focus(); ta.select(); toast("Text select ho gaya, ab copy kar lein"); };
+  try{ navigator.clipboard.writeText(t).then(()=>toast(ok), fb); }catch(e){ fb(); }
+}
+$("#copyOrder").onclick=()=>{ if(!cart.size){ toast("Pehle kuch items add karein"); return; } copyText(orderText(), "Order copy ho gaya"); };
+$("#waBtn").addEventListener("click", e=>{ if(!cart.size){ e.preventDefault(); toast("Pehle kuch items add karein"); } });
+document.querySelectorAll("[data-copy]").forEach(b=> b.onclick=()=>{
+  const t=b.dataset.copy; try{ navigator.clipboard.writeText(t).then(()=>toast("Number copy ho gaya"), ()=>toast(t)); }catch(e){ toast(t); } });
+let tt; function toast(m){ const el=$("#toast"); el.textContent=m; el.classList.add("on"); clearTimeout(tt); tt=setTimeout(()=>el.classList.remove("on"),1900); }
+function pop(b){ b.animate?.([{transform:"scale(1)"},{transform:"scale(1.12)"},{transform:"scale(1)"}],{duration:280}); spin = .3; }
+
+/* ribbon */
+const rw = ["Chicken Karahi Madrasi","Afghani Pulao","Crown Crust Pizza","Batair Karahi","Lotus Shake","Mutton Karahi Makhni","Special Mazz Pizza","Doodh Patti","Zinger Burger"];
+$("#ribbon").innerHTML = [...rw,...rw].map(w=>`<span>${w}</span>`).join("");
+
+/* =============== 3D KARAHI (Three.js) =============== */
+let spin = 0;
+(function(){
+  const canvas = $("#karahi3d");
+  if(!window.THREE){ canvas.outerHTML = `<div style="position:absolute;inset:18% 12% auto">${ART.karahi}</div>`; return; }
+  const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
+  renderer.setPixelRatio(Math.min(devicePixelRatio,2)); renderer.shadowMap.enabled = true;
+  const scene = new THREE.Scene();
+  const cam = new THREE.PerspectiveCamera(34,1,.1,100); cam.position.set(0,5.6,7.2); cam.lookAt(0,.1,0);
+  scene.add(new THREE.HemisphereLight(0xfff0d8, 0x3f1115, .8));
+  const key = new THREE.DirectionalLight(0xffdca8, 1.15); key.position.set(3,8,4); key.castShadow = true; key.shadow.mapSize.set(1024,1024); scene.add(key);
+  const rim = new THREE.PointLight(0xe8a33d, 1.6, 18); rim.position.set(-4,2.5,-3); scene.add(rim);
+
+  const tex = (draw,s=512)=>{ const c=document.createElement("canvas"); c.width=c.height=s; draw(c.getContext("2d"),s); const t=new THREE.CanvasTexture(c); t.anisotropy=4; return t; };
+  const gravyTex = tex((g,s)=>{
+    const gr = g.createRadialGradient(s/2,s/2,10,s/2,s/2,s/2); gr.addColorStop(0,"#b8431c"); gr.addColorStop(.75,"#9a2f14"); gr.addColorStop(1,"#6e1f0e");
+    g.fillStyle=gr; g.fillRect(0,0,s,s);
+    for(let i=0;i<500;i++){ g.fillStyle=`rgba(${Math.random()<.5?"232,130,40":"120,30,10"},${Math.random()*.35})`; g.beginPath(); g.arc(Math.random()*s,Math.random()*s,3+Math.random()*16,0,7); g.fill(); }
+    for(let i=0;i<70;i++){ g.fillStyle="rgba(255,190,90,.45)"; g.beginPath(); g.arc(Math.random()*s,Math.random()*s,2+Math.random()*5,0,7); g.fill(); }
+  });
+  const ironTex = tex((g,s)=>{ g.fillStyle="#26221e"; g.fillRect(0,0,s,s); for(let i=0;i<3000;i++){ g.fillStyle=`rgba(${Math.random()<.5?"70,62,54":"10,8,6"},${Math.random()*.5})`; g.fillRect(Math.random()*s,Math.random()*s,2,2);} });
+
+  const K = new THREE.Group(); scene.add(K);
+  // wok body (lathe)
+  const pts = []; for(let i=0;i<=20;i++){ const t=i/20; pts.push(new THREE.Vector2(.05+2.35*Math.sin(t*Math.PI/2), -1.05*Math.cos(t*Math.PI/2)+.25)); }
+  pts.push(new THREE.Vector2(2.52,.28));
+  const iron = new THREE.MeshStandardMaterial({map:ironTex, color:0x9a8f84, metalness:.75, roughness:.42, side:THREE.DoubleSide});
+  const wok = new THREE.Mesh(new THREE.LatheGeometry(pts,96), iron); wok.castShadow = true; wok.receiveShadow = true; K.add(wok);
+  const lip = new THREE.Mesh(new THREE.TorusGeometry(2.5,.07,12,120), new THREE.MeshStandardMaterial({color:0x3a332c, metalness:.8, roughness:.35}));
+  lip.rotation.x = Math.PI/2; lip.position.y=.28; K.add(lip);
+  // brass handles
+  const brass = new THREE.MeshStandardMaterial({color:0xc9933a, metalness:.9, roughness:.28});
+  [-1,1].forEach(s=>{ const h=new THREE.Mesh(new THREE.TorusGeometry(.36,.07,12,32,Math.PI), brass); h.position.set(s*2.62,.3,0); h.rotation.set(Math.PI/2,0,s>0?-Math.PI/2:Math.PI/2); K.add(h); });
+  // gravy
+  const gravy = new THREE.Mesh(new THREE.CircleGeometry(2.12,96), new THREE.MeshStandardMaterial({map:gravyTex, roughness:.32, metalness:.1}));
+  gravy.rotation.x = -Math.PI/2; gravy.position.y = .02; gravy.receiveShadow = true; K.add(gravy);
+  const rand=(a,b)=>a+Math.random()*(b-a);
+  const place=(m,minR,maxR,y)=>{ const a=rand(0,6.28), r=Math.sqrt(rand(minR*minR,maxR*maxR)); m.position.set(Math.cos(a)*r,y,Math.sin(a)*r); m.rotation.set(rand(0,3),rand(0,6),rand(0,3)); K.add(m); return m; };
+  // chicken pieces
+  const chickA = new THREE.MeshStandardMaterial({color:0xa9461c, roughness:.55});
+  const chickB = new THREE.MeshStandardMaterial({color:0xc4602a, roughness:.5});
+  for(let i=0;i<13;i++){ const g=new THREE.DodecahedronGeometry(rand(.26,.38),1); const m=new THREE.Mesh(g, i%2?chickA:chickB); m.scale.set(1.2,.62,.9); m.castShadow=true; place(m,.15,1.7,.12); }
+  // green chilies
+  const chiliMat = new THREE.MeshStandardMaterial({color:0x4f8a2a, roughness:.35});
+  for(let i=0;i<7;i++){ const curve=new THREE.CatmullRomCurve3([new THREE.Vector3(-.45,0,0),new THREE.Vector3(0,.06,.1),new THREE.Vector3(.45,0,.02)]);
+    const m=new THREE.Mesh(new THREE.TubeGeometry(curve,16,.06,8,false), chiliMat); m.castShadow=true; place(m,.2,1.75,.22); m.rotation.x=rand(-.2,.2); m.rotation.z=rand(-.2,.2); }
+  // ginger julienne
+  const ginger = new THREE.MeshStandardMaterial({color:0xf0dfa8, roughness:.6});
+  for(let i=0;i<22;i++){ const m=new THREE.Mesh(new THREE.BoxGeometry(.34,.03,.03), ginger); place(m,.1,1.8,.26); m.rotation.x=0; m.rotation.z=rand(-.2,.2); }
+  // coriander
+  const cor = new THREE.MeshStandardMaterial({color:0x6f9d3e, roughness:.6, side:THREE.DoubleSide});
+  for(let i=0;i<26;i++){ const m=new THREE.Mesh(new THREE.CircleGeometry(.07,6), cor); place(m,.1,1.85,.25); m.rotation.x=-Math.PI/2+rand(-.4,.4); }
+  // tomato slices
+  const tom = new THREE.MeshStandardMaterial({color:0xd8321c, roughness:.4});
+  for(let i=0;i<5;i++){ const m=new THREE.Mesh(new THREE.CylinderGeometry(.2,.2,.04,20), tom); place(m,.3,1.6,.22); m.rotation.set(rand(-.2,.2),0,rand(-.2,.2)); }
+
+  const floor = new THREE.Mesh(new THREE.CircleGeometry(3.6,64), new THREE.ShadowMaterial({opacity:.4}));
+  floor.rotation.x=-Math.PI/2; floor.position.y=-.85; floor.receiveShadow=true; scene.add(floor);
+
+  // steam
+  const steamTex = tex((g,s)=>{ const gr=g.createRadialGradient(s/2,s/2,0,s/2,s/2,s/2); gr.addColorStop(0,"rgba(255,245,230,.55)"); gr.addColorStop(1,"rgba(255,245,230,0)"); g.fillStyle=gr; g.fillRect(0,0,s,s); },128);
+  const steam = [];
+  for(let i=0;i<14;i++){ const sp=new THREE.Sprite(new THREE.SpriteMaterial({map:steamTex, transparent:true, depthWrite:false, opacity:0}));
+    sp.userData={x:rand(-1.2,1.2), z:rand(-1,1), t:Math.random()}; scene.add(sp); steam.push(sp); }
+
+  K.position.y = -.2; K.rotation.x = .08;
+  let rotY=0, vel=.004, drag=false, lx=0;
+  canvas.addEventListener("pointerdown", e=>{ drag=true; lx=e.clientX; canvas.setPointerCapture(e.pointerId); });
+  canvas.addEventListener("pointermove", e=>{ if(!drag) return; const dx=e.clientX-lx; lx=e.clientX; vel=dx*.004; rotY+=vel; });
+  const up=()=>drag=false; canvas.addEventListener("pointerup",up); canvas.addEventListener("pointercancel",up);
+
+  function resize(){ const w=canvas.clientWidth, h=canvas.clientHeight; if(!w||!h) return; renderer.setSize(w,h,false); cam.aspect=w/h;
+    cam.fov = w/h < .9 ? 40 : 34; cam.updateProjectionMatrix(); }
+  new ResizeObserver(resize).observe(canvas); resize();
+
+  let t=0, visible=true;
+  new IntersectionObserver(es=>{ visible = es[0].isIntersecting; }).observe(canvas);
+  (function frame(){
+    requestAnimationFrame(frame);
+    if(!visible) return;
+    t+=.016;
+    if(!drag){ vel += ((reduce?0:.004)-vel)*.03; rotY += vel + spin*.15; spin *= .92; }
+    K.rotation.y = rotY;
+    if(!reduce) K.position.y = -.2 + Math.sin(t*1.3)*.05;
+    steam.forEach(s=>{ const u=s.userData; u.t += reduce?0:.004; if(u.t>1){ u.t=0; u.x=rand(-1.2,1.2); u.z=rand(-1,1); }
+      s.position.set(u.x + Math.sin(u.t*6+u.z)*.2, .3 + u.t*2.6, u.z); const sc=.6+u.t*1.6; s.scale.set(sc,sc,1);
+      s.material.opacity = reduce ? 0 : Math.sin(u.t*Math.PI)*.35; });
+    renderer.render(scene,cam);
+  })();
+})();
+
+/* init */
+renderGroups(); renderChips(); renderCat(); renderDeals(); renderCart();
+</script>
+
+</body>
+</html>
